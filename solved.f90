@@ -7,7 +7,8 @@ program fortran_assignment
     integer, dimension(360) :: Fzone_year, Fzone_month, Fzone_y
     integer, dimension(360) :: Tzone_year, Tzone_month, Tzone_y
     real :: sumN, avgN, sumT, avgT, sumF, avgF
-    integer :: var1, var2, var3, var4, var5, var6, var7, var8, var9, var10, var11, var12, var13, var14, var15, var16, var17, var18
+    integer :: var1=1, var2=1, var3=1, var4=1, var5=1, var6=1, var7=1, var8=1, var9=1
+    integer::  var10=1, var11=1, var12=1, var13=1, var14=1, var15=1, var16=1, var17=1, var18=1
     integer :: start=1919, stop=1950
 
     open(20, file = 'Data1.txt', status='old', action='read')
