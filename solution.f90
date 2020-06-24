@@ -56,7 +56,7 @@ PROGRAM assignment
    END DO
    OPEN(14,FILE="Tzone_data.csv",STATUS="new")
    DO z=1,30,1
-   WRITE(14,*)years(z),Train_average(z)
+   WRITE(14)years(z),Train_average(z)
    END DO
    CLOSE(14)    
     OPEN(12,file="Data3.txt",status="old",action="read")    
@@ -82,7 +82,7 @@ PROGRAM assignment
    END DO
    OPEN(15,file="Fzone_data.csv",status="new")
    DO t=1,30,1 
-   WRITE(15,*)years(t),Frain_average(t)
+   WRITE(15)years(t),Frain_average(t)
    END DO
    CLOSE(15)
 END PROGRAM assignment
