@@ -39,7 +39,7 @@ program fortran_assignment
     close(10)
     open(30, file = 'Data2.txt', status='old', action='read')
     do var7 = 1, 360
-        read(30, *)year(var1), Fzone_month(var1), Fzone_rainfall(var1)
+        read(30, *)year(var7), Fzone_month(var7), Fzone_rainfall(var7)
         var8 = var8 + 1        
     end do
     
