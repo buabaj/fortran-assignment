@@ -32,7 +32,7 @@ program fortran_assignment
         Nzone_avg(var5) = avgN
         var5 = var5 + 1
     end do
-    open(10, file='test_data.csv', status='new', action='write')
+    open(10, file='Nzone_data.csv', status='new', action='write')
     do var6 = 1, 12
         write(10, *) Nzone_month(var6), Nzone_avg(var6)        
     end do
