@@ -13,17 +13,17 @@ program fortran_assignment
 
     open(20, file = 'Data1.txt', status='old', action='read')
     do var1 = 1, 360
-        read(20, *, end=100)year(var1), Nzone_month(var1), Nzone_rainfall(var1)
+        read(20, *)year(var1), Nzone_month(var1), Nzone_rainfall(var1)
         var2 = var2 + 1        
     end do
-    100 continue
+    
     close(20)
-    do var3 = start, stop
+    do var3 = 1, 12
         sumN = 0
         avgN = 0
         do var4 = 1, var2
             if (Nzone_month(var4) == var3) then
-                m(var5) = var3
+                Nzone_y(var5) = var3
                 sumN = sumN + Nzone_rainfall(var4)
                 avgN = sumN/30
             end if           
@@ -34,7 +34,7 @@ program fortran_assignment
     end do
     open(10, file='test_data.csv', status='new', action='write')
     do var6 = 1, 12
-        write(10, *) m(var6), Nzone_avg(var6)        
+        write(10, *) Nzone_month(var6), Nzone_avg(var6)        
     end do
     close(10)
    
