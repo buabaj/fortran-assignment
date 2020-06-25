@@ -77,15 +77,18 @@ program fortran_assignment
     do var12 = 1, 12
         write(40, *) Fzone_month(var12), Fzone_avg(var12)        
     end do
-    close(40)
+    close(40)! close file
 
+    !open third datasset and read values by iterating through the data
     open(50, file = 'Data3.txt', status='old', action='read')
     do var13 = 1, 360
         read(50, *)year(var13), Tzone_month(var13), Tzone_rainfall(var13)
         var14 = var14 + 1        
     end do
-    
+    !close file
     close(50)
+
+    !writing a nested loop and conditional statement logic for calculating seasonal climatology
     do var15 = 1, 12
         sumT = 0
         avgT = 0
@@ -100,13 +103,12 @@ program fortran_assignment
         Tzone_avg(var17) = avgT
         var17 = var17 + 1
     end do
+
+    !writing output values to new file
     open(60, file='Tzone_data.csv', status='new', action='write')
     do var18 = 1, 12
         write(60, *) Tzone_month(var18), Tzone_avg(var18)        
     end do
-    close(60)
-
-
-   
-    
+    close(60) !closing output file   
+!!ending fortran program    
 end program fortran_assignment
