@@ -47,13 +47,16 @@ program fortran_assignment
     end do
     close(10)
 
+    !open second dataset and read values by iterating through the data
     open(30, file = 'Data2.txt', status='old', action='read')
     do var7 = 1, 360
         read(30, *)year(var7), Fzone_month(var7), Fzone_rainfall(var7)
         var8 = var8 + 1        
     end do
     
-    close(30)
+    close(30) ! close file
+
+    !write nested loop and conditional statement logic to calculate climatology
     do var9 = 1, 12
         sumF = 0
         avgF = 0
@@ -68,6 +71,8 @@ program fortran_assignment
         Fzone_avg(var11) = avgF
         var11 = var11 + 1
     end do
+
+    !write output values to new csv file
     open(40, file='Fzone_data.csv', status='new', action='write')
     do var12 = 1, 12
         write(40, *) Fzone_month(var12), Fzone_avg(var12)        
