@@ -43,7 +43,7 @@ program fortran_assignment
     !write output values to new file
     open(10, file='Nzone_data.csv', status='new', action='write')
     do var6 = 1, 12
-        write(10, *) Nzone_month(var6), Nzone_avg(var6)        
+        write(10, '(F8.2)') Nzone_month(var6), Nzone_avg(var6)        
     end do
     close(10)
 
@@ -75,7 +75,7 @@ program fortran_assignment
     !write output values to new csv file
     open(40, file='Fzone_data.csv', status='new', action='write')
     do var12 = 1, 12
-        write(40, *) Fzone_month(var12), Fzone_avg(var12)        
+        write(40, '(F8.2)') Fzone_month(var12), Fzone_avg(var12)        
     end do
     close(40)! close file
 
@@ -107,7 +107,7 @@ program fortran_assignment
     !writing output values to new file
     open(60, file='Tzone_data.csv', status='new', action='write')
     do var18 = 1, 12
-        write(60, *) Tzone_month(var18), Tzone_avg(var18)        
+        write(60, '(F8.2)') Tzone_month(var18), Tzone_avg(var18)        
     end do
     close(60) !closing output file   
 !!ending fortran program    
