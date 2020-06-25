@@ -138,38 +138,6 @@ do z=1,12
 End do
 
 
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 !writing output into the various files
 
