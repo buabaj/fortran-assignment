@@ -37,6 +37,34 @@ program fortran_assignment
         write(10, *) Nzone_month(var6), Nzone_avg(var6)        
     end do
     close(10)
+    open(30, file = 'Data2.txt', status='old', action='read')
+    do var7 = 1, 360
+        read(30, *)year(var1), Fzone_month(var1), Fzone_rainfall(var1)
+        var8 = var8 + 1        
+    end do
+    
+    close(30)
+    do var9 = 1, 12
+        sumF = 0
+        avgF = 0
+        do var10 = 1, var8
+            if (Fzone_month(var10) == var9) then
+                Fzone_y(var11) = var9
+                sumF = sumF + Fzone_rainfall(var10)
+                avgF = sumF/30
+            end if           
+        end do
+        Fzone_sum(var11) = sumF
+        Fzone_avg(var11) = avgF
+        var11 = var11 + 1
+    end do
+    open(40, file='Fzone_data.csv', status='new', action='write')
+    do var12 = 1, 12
+        write(40, *) Fzone_month(var12), Fzone_avg(var12)        
+    end do
+    close(40)
+
+
    
     
 end program fortran_assignment
