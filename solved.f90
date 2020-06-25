@@ -13,7 +13,7 @@ program fortran_assignment
     !instanstiate iterators and counters setting initial value to 1
     integer :: var1=1, var2=1, var3=1, var4=1, var5=1, var6=1, var7=1, var8=1, var9=1
     integer::  var10=1, var11=1, var12=1, var13=1, var14=1, var15=1, var16=1, var17=1, var18=1
-    integer :: start=1919, stop=1950
+    
 
 
     !open first data set and read through values by am iterator
